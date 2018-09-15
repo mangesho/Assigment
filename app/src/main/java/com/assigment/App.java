@@ -17,6 +17,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        appInstance = this;
         mApiComponent = DaggerApiComponent.builder()
                 .appModule(new AppModule(this))
                 .apiModule(new ApiModule("https://reqres.in/"))
